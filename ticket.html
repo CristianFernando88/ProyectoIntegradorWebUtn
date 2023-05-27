@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
 <body>
-    <header class="py-3 container-fluid position-sticky z-3">
+    <header class="py-3 container-fluid sticky-top z-3">
         <div class="row justify-content-between align-items-center mx-5">
             <div class="col-4 row align-items-center"> 
                 <a href="#" class="col-2">
@@ -32,47 +32,50 @@
             </nav>
         </div>
     </header>
-    <main class="container py-3">
-        <div class="w-75 container justify-content-center">
-            <div class="row  h-75">
-                <div class="col text-center border border-primary p-4 m-2">
+    <main class="container py-3 mt-2">
+        <div class="w-75  px-5 container justify-content-center">
+            <div class="row h-75">
+                <div class="col text-center border border-primary py-4 m-2">
                     <h2>Estudiante</h2>
-                    <p class="fs-2">Tienen un descuento</p>
-                    <p class="fs-2">80%</p>
-                    <p class="fs-2">*presentar documentacion</p>
+                    <p class="fs-3">Tienen un descuento</p>
+                    <p class="fs-2 fw-bold">80%</p>
+                    <p class="fs-4">*presentar documentacion</p>
                 </div>
-                <div class="col text-center border border-info p-4 m-2">
-                    <h2>Estudiante</h2>
-                    <p class="fs-2">Tienen un descuento</p>
-                    <p class="fs-2">80%</p>
-                    <p class="fs-2">*presentar documentacion</p>
+                <div class="col text-center border border-info py-4 m-2">
+                    <h2>Trainee</h2>
+                    <p class="fs-3">Tienen un descuento</p>
+                    <p class="fs-2 fw-bold">50%</p>
+                    <p class="fs-4">*presentar documentacion</p>
                 </div>
-                <div class="col text-center border border-warning p-4 m-2">
-                    <h2>Estudiante</h2>
-                    <p class="fs-2">Tienen un descuento</p>
-                    <p class="fs-2">80%</p>
-                    <p class="fs-2">*presentar documentacion</p>
+                <div class="col text-center border border-warning py-4 m-2">
+                    <h2>Junior</h2>
+                    <p class="fs-3">Tienen un descuento</p>
+                    <p class="fs-2 fw-bold">15%</p>
+                    <p class="fs-4">*presentar documentacion</p>
                 </div>
             </div>
         </div> 
-        <div class="w-75 container justify-content-center">
+        <div class="w-75 px-5 container justify-content-center">
             <div class="text-center">
                 <h5>VENTA</h5>
-                <H1>VALOR DE TICKET $200</H1>
+                <h1 class="fs-1">VALOR DE TICKET $200</h1>
             </div>
             <form id="miFormulario" action="">
                 <div class="row mb-3">
                     <div class="col">
-                        <input class="form-control fs-4" type="text" id="nombre" placeholder="Nombre">
+                        <input onchange="restablecerInput(this)" class="form-control fs-4" type="text" id="nombre" placeholder="Nombre" required>
                     </div>
                     <div class="col">
-                        <input class="form-control fs-4" type="text" id="apellido" placeholder="Apellido">
+                        <input onchange="restablecerInput(this)" class="form-control fs-4" type="text" id="apellido" placeholder="Apellido" required>
                     </div>
+                </div>
+                <div class="mb-3">
+                    <input onchange="restablecerInput(this)" class="form-control fs-4" type="email" id="correo" placeholder="Correo" required>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
                         <label for="cantidad" class="form-label fs-4">Cantidad</label>
-                        <input type="number" class="form-control fs-4" id="cantidad" placeholder="Cantidad">
+                        <input onchange="restablecerInput(this)" type="number" min="0" max="5" class="form-control fs-4" id="cantidad" placeholder="Cantidad" required>
                     </div>
                     <div class="col">
                         <label for="categoria" class="form-label fs-4">Categoría</label>
@@ -82,22 +85,22 @@
                             <option value="3">Junior</option>
                         </select>
                     </div>
-                </div>
-                <div id="resumen" class="my-4 alert alert-primary fs-4" role="alert">
-                    Total a Pagar:$
-                </div>
-                <div class="row mb-4">
-                    <div class="col d-grid gap-2">
-                        <button onclick="borrar()" class="btn btn-success fs-4" style="background-color: #82CD47;border:none;" type="button">Borrar</button>
-                    </div>
-                    <div class="col d-grid gap-2">
-                        <button onclick="calcular()" class="btn btn-success fs-4" style="background-color: #82CD47;border:none;" type="button">Resumen</button>
-                    </div>
-                </div>
+                </div>       
             </form>
+            <div id="resumen" class="my-4 alert alert-primary fs-4" role="alert">
+                Total a Pagar: $
+            </div>
+            <div class="row mb-2">
+                <div class="col d-grid gap-2">
+                    <button onclick="borrar()" class="btn btn-success fs-4" style="background-color: #82CD47;border:none;" type="button">Borrar</button>
+                </div>
+                <div class="col d-grid gap-2">
+                    <button onclick="calcular()" class="btn btn-success fs-4" style="background-color: #82CD47;border:none;" type="button">Resumen</button>
+                </div>
+            </div>
         </div>
     </main>
-    <footer class="color-gradiente p-3  sticky-bottom">
+    <footer class="color-gradiente p-3  position-sticky-bottom">
         <nav class="container-fluid h-auto">
             <ul class="nav justify-content-center">
                 <li class="nav-item me-5" style="width: 10rem;"><a class="nav-link text-light text-center fs-4" href="#">Preguntas frecuentes</a></li>

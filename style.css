@@ -48,11 +48,6 @@ header{
     background: linear-gradient(to right, rgba(38,93,140), rgba(41,181,188))
 }
 
-.cajas{
-    width: auto;
-    height: auto;
-    border: solid 1px rgb(38,93,140);
-    text-align: center;
-    padding: 2rem;
-    font-size: 2rem;
+.claseCompletar{
+    border-color: rgb(247, 173, 173);
 }
