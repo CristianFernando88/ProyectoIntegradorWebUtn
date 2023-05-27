@@ -46,7 +46,6 @@ function borrar(){
     formulario['apellido'].value = "";
     formulario['correo'].value = "";
     formulario['cantidad'].value = "";
-    console.log(formulario['categoria'].text);
     formulario['categoria'].value = 1;
     document.getElementById('resumen').innerHTML = "Total a Pagar: $";
 
