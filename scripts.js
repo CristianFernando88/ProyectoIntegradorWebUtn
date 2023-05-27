@@ -1,4 +1,4 @@
-console.log("Compra ticket");
+//console.log("Compra ticket");
 const formulario = document.forms['miFormulario'];
 console.log(formulario);
 function calcular(){
@@ -46,7 +46,9 @@ function borrar(){
     formulario['apellido'].value = "";
     formulario['correo'].value = "";
     formulario['cantidad'].value = "";
-    formulario['categoria'].value = 1;
+    //let indice = formulario['categoria'].selectedIndex;
+    //console.log(formulario['categoria'].options[indice].text);
+    formulario['categoria'].selectedIndex = 0;
     document.getElementById('resumen').innerHTML = "Total a Pagar: $";
 
 }
