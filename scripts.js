@@ -46,8 +46,10 @@ function borrar(){
     formulario['apellido'].value = "";
     formulario['correo'].value = "";
     formulario['cantidad'].value = "";
-    formulario['categoria'].value = "Estudiante";
-    document.getElementById('resumen').innerHTML = "Total a Pagar: $";   
+    console.log(formulario['categoria'].text);
+    formulario['categoria'].value = 1;
+    document.getElementById('resumen').innerHTML = "Total a Pagar: $";
+
 }
 
 function validar(){
